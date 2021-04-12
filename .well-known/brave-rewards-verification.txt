@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: bezoscalculator.com
+Token: c6589b8e25ce262fc5bab1981be3d725eb761b2d7746b5c3aa98fc1bd1d2f9e7
