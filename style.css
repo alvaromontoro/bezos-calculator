@@ -1,0 +1,83 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Palatino, Helvetica, arial, sans-serif;
+  overflow: hidden;
+}
+
+article {
+  font-size: 5vmin;
+}
+
+article p {
+  text-shadow: 
+    0 -1px 1px #fff, 1px -1px 1px #fff, 1px 0 1px #fff,
+    1px 1px 1px #fff, 0 1px 1px #fff, -1px 1px 1px #fff, 
+    -1px 0 1px #fff, -1px -1px 1px #fff;
+}
+
+output span {
+  font-family: monospace, monospace;
+  display: inline-block;
+  margin: 0.5vmin;
+  color: white;
+  background: black;
+  font-size: 8vmin;
+  padding: 1vmin;
+  border-radius: 0.5vmin;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes pop {
+  0% { 
+    transform: translate(0, 100vh); 
+    /* box-shadow: 0 4vmin 4vmin -2vmin rgba(0,0,0,0.125); */
+  }
+  100% { 
+    transform: translate(0, -200%); 
+    /* box-shadow: 0 -4vmin 4vmin -2vmin rgba(0,0,0,0.125); */
+  }
+}
+
+aside {
+  top: 0;
+  position: absolute;
+  background: #fca;
+  padding: 2vmin;
+  font-size: 2.5vw;
+  font-size: clamp(1rem, 2.5vw, 1.375rem);
+  max-width: 25vw;
+  max-width: clamp(100px, 25vw, 300px);
+  border-radius: 1vmin;
+  z-index: -1;
+  animation: pop 20s linear;
+  animation-fill-mode: forwards;
+  box-shadow: 0 0 2vmin rgba(0,0,0,0.25);
+  border: 1px solid rgba(0,0,0,0.125);
+  line-height: 1.25;
+}
+
+aside.color0 { background: #ffadad; }
+aside.color1 { background: #ffd6a5; }
+aside.color2 { background: #fdffb6; }
+aside.color3 { background: #caffbf; }
+aside.color4 { background: #beeeef; }
+aside.color5 { background: #a0c4ff; }
+aside.color6 { background: #bdb2ff; }
+aside.color7 { background: #ffc6ff; }
+
+aside.time0 { animation-timing-function: linear; }
+aside.time1 { animation-timing-function: ease; }
+aside.time2 { animation-timing-function: ease-in; }
+aside.time3 { animation-timing-function: ease-out; }
+aside.time4 { animation-timing-function: ease-in-out; }
+
+aside.top0 { z-index: 1; }
+aside.top1 { z-index: 3; }
