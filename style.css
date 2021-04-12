@@ -81,3 +81,11 @@ aside.time4 { animation-timing-function: ease-in-out; }
 
 aside.top0 { z-index: 1; }
 aside.top1 { z-index: 3; }
+
+footer {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  font-size: 0.875rem;
+  z-index: -1;
+}
