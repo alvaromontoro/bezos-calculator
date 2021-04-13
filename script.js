@@ -14,14 +14,6 @@ function createBubble(time, text) {
   body.append(aside);
 }
 
-setInterval(function() {
-  amount += 3605;
-  output.innerHTML = "<span>$</span>" + ("" + amount).split("").reverse().reduce(function(acc, val, idx) {
-    return `<span>${val}</span>${idx > 0 && idx % 3 == 0 ? "<span>,</span>" : ""}${acc}`;
-  }, "");
-  
-}, 1000);
-
 const bubbles = [
   { time: 4, text: "more than a minimum wage worker... in a year" },
   { time: 9, text: "more than Amazon's lowest paid employee... in a year" },
@@ -33,6 +25,8 @@ const bubbles = [
   { time: 38, text: "enough to buy a 'basic' Aston Martin Vantage" },
   { time: 48, text: "more than what a US Senator makes in a year" },
   { time: 55, text: "enough to buy a fully loaded Tesla Model S" },
+  { time: 70, text: "enough to raise a child from birth to age 17" },
+  { time: 80, text: "enough to buy a house for the median price in the USA" },
   { time: 89, text: "more than the yearly salary of 99% of the US population" },
   { time: 111, text: "more than what the US President makes in a year" },
   { time: 277, text: "enough to pay for the most expensive fishing lure ever" }

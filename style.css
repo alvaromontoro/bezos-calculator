@@ -1,4 +1,5 @@
 html, body {
+  --size: 1.5rem;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -22,27 +23,78 @@ article p {
     -1px 0 1px #fff, -1px -1px 1px #fff;
 }
 
-output span {
-  font-family: monospace, monospace;
-  display: inline-block;
-  margin: 0.5vmin;
-  color: white;
-  background: black;
-  font-size: 8vmin;
-  padding: 1vmin;
-  border-radius: 0.5vmin;
-  position: relative;
-  z-index: 2;
+output {
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes pop {
-  0% { 
-    transform: translate(0, 100vh); 
-    /* box-shadow: 0 4vmin 4vmin -2vmin rgba(0,0,0,0.125); */
+output span {
+  font-family: monospace, monospace;
+  color: white;
+  background: black;
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  animation: show 0.125s linear 1;
+  animation-fill-mode: forwards;
+  font-size: var(--size);
+  height: calc(var(--size) * 1.5);
+  line-height: calc(var(--size) * 1.5);
+  border-radius: 0.25rem;
+  width: 0;
+  margin: 0;
+}
+
+@keyframes show {
+  100% { 
+    width: var(--size); 
+    margin: calc(var(--size) * 0.0625);
   }
+}
+
+span.u0 { animation-delay: 0.0000000000s; }
+span.u1 { animation-delay: 0.0022739251s; }
+span.u2 { animation-delay: 0.0277392510s; }
+span.u3 { animation-delay: 0.2773925104s; }
+span.u4 { animation-delay: 2.7739251040s; }
+span.u5 { animation-delay: 27.739251040s; }
+span.u6 { animation-delay: 277.39251040s; }
+span.u7 { animation-delay: 2773.9251040s; }
+span.u8 { animation-delay: 27739.251040s; }
+
+output span.symbol {
+  display: inline-block;
+}
+
+@keyframes animate {
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+span.number::before {
+  content: "0\A 1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9";
+  animation: animate 10s steps(10, end) infinite;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+span.u0::before { animation-duration: 0.0022739251s; }
+span.u1::before { animation-duration: 0.0277392510s; }
+span.u2::before { animation-duration: 0.2773925104s; }
+span.u3::before { animation-duration: 2.7739251040s; }
+span.u4::before { animation-duration: 27.739251040s; }
+span.u5::before { animation-duration: 277.39251040s; }
+span.u6::before { animation-duration: 2773.9251040s; }
+span.u7::before { animation-duration: 27739.251040s; }
+span.u8::before { animation-duration: 277392.51040s; }
+
+@keyframes pop {
   100% { 
     transform: translate(0, -200%); 
-    /* box-shadow: 0 -4vmin 4vmin -2vmin rgba(0,0,0,0.125); */
   }
 }
 
@@ -62,6 +114,7 @@ aside {
   box-shadow: 0 0 2vmin rgba(0,0,0,0.25);
   border: 1px solid rgba(0,0,0,0.125);
   line-height: 1.25;
+  transform: translate(0, 100vh); 
 }
 
 aside.color0 { background: #ffadad; }
@@ -88,3 +141,29 @@ footer {
   bottom: 0.5rem;
   font-size: 0.875rem;
 }
+
+@media all and (min-width:500px) {
+  body {
+    --size: 2.5rem;
+  }
+}
+
+@media all and (min-width:750px) {
+  body {
+    --size: 3.5rem;
+  }
+}
+
+@media all and (min-width:1000px) {
+  body {
+    --size: 4.5rem;
+  }
+}
+
+@media all and (min-width:1200px) {
+  body {
+    --size: 5.5rem;
+  }
+}
+
+
