@@ -12,7 +12,7 @@ function createBubble(cost, text) {
   const aside = document.createElement("aside");
   aside.style.left = `${left + 5}vw`;
   aside.className = `color${Math.floor(Math.random() * numColors)} time${Math.floor(Math.random() * numTiming)} top${Math.floor(Math.random() * numTops)}`;
-  aside.innerHTML = `<b>${cost / earningRate} seconds</b>:<br>${text}<br/><i>${numberFormatter.format(cost)}</i>`;
+  aside.innerHTML = `<b>${Math.floor(cost / earningRate)} seconds</b>:<br>${text}<br/><i>${numberFormatter.format(cost)}</i>`;
   body.append(aside);
 }
 
