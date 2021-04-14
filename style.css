@@ -10,6 +10,7 @@ html, body {
   text-align: center;
   font-family: Palatino, Helvetica, arial, sans-serif;
   overflow: hidden;
+  background-color: rgb(40, 40, 40)
 }
 
 article {
@@ -17,10 +18,11 @@ article {
 }
 
 article p {
+  color: white;
   text-shadow: 
-    0 -1px 1px #fff, 1px -1px 1px #fff, 1px 0 1px #fff,
-    1px 1px 1px #fff, 0 1px 1px #fff, -1px 1px 1px #fff, 
-    -1px 0 1px #fff, -1px -1px 1px #fff;
+    0 -1px 1px #000, 1px -1px 1px #000, 1px 0 1px #000,
+    1px 1px 1px #000, 0 1px 1px #000, -1px 1px 1px #000, 
+    -1px 0 1px #000, -1px -1px 1px #000;
 }
 
 output {
@@ -30,8 +32,8 @@ output {
 
 output span {
   font-family: monospace, monospace;
-  color: white;
-  background: black;
+  background: rgb(233, 233, 233);
+  color: black;
   position: relative;
   z-index: 2;
   padding: 0;
