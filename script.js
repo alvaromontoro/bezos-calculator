@@ -38,7 +38,7 @@ function prettyPrintTime(sec_num) {
   }
 
   if (seconds > 0) {
-    output += `${days > 0 || minutes > 0 || minutes > 0 ? ' ': ''}${seconds} second${seconds > 1 ? 's' : ''}`
+    output += `${days > 0 || hours > 0 || minutes > 0 ? ' ': ''}${seconds} second${seconds > 1 ? 's' : ''}`
   }
   return output;
 }
