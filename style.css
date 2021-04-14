@@ -169,3 +169,15 @@ footer {
 }
 
 
+/* This is for the color of the link to the github repo */
+a:link,
+a:visited {
+    color: rgb(119, 153, 244);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover {
+    color: rgb(78, 125, 255);
+}
