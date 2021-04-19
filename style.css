@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   --size: 1.5rem;
   margin: 0;
   padding: 0;
@@ -19,9 +20,9 @@ article {
 
 article p {
   color: white;
-  text-shadow: 
+  text-shadow:
     0 -1px 1px #000, 1px -1px 1px #000, 1px 0 1px #000,
-    1px 1px 1px #000, 0 1px 1px #000, -1px 1px 1px #000, 
+    1px 1px 1px #000, 0 1px 1px #000, -1px 1px 1px #000,
     -1px 0 1px #000, -1px -1px 1px #000;
 }
 
@@ -50,21 +51,47 @@ output span {
 }
 
 @keyframes show {
-  100% { 
-    width: var(--size); 
+  100% {
+    width: var(--size);
     margin: calc(var(--size) * 0.0625);
   }
 }
 
-span.u0 { animation-delay: 0.0000000000s; }
-span.u1 { animation-delay: 0.0022739251s; }
-span.u2 { animation-delay: 0.0277392510s; }
-span.u3 { animation-delay: 0.2773925104s; }
-span.u4 { animation-delay: 2.7739251040s; }
-span.u5 { animation-delay: 27.739251040s; }
-span.u6 { animation-delay: 277.39251040s; }
-span.u7 { animation-delay: 2773.9251040s; }
-span.u8 { animation-delay: 27739.251040s; }
+span.u0 {
+  animation-delay: 0.0000000000s;
+}
+
+span.u1 {
+  animation-delay: 0.0022739251s;
+}
+
+span.u2 {
+  animation-delay: 0.0277392510s;
+}
+
+span.u3 {
+  animation-delay: 0.2773925104s;
+}
+
+span.u4 {
+  animation-delay: 2.7739251040s;
+}
+
+span.u5 {
+  animation-delay: 27.739251040s;
+}
+
+span.u6 {
+  animation-delay: 277.39251040s;
+}
+
+span.u7 {
+  animation-delay: 2773.9251040s;
+}
+
+span.u8 {
+  animation-delay: 27739.251040s;
+}
 
 output span.symbol {
   display: inline-block;
@@ -84,19 +111,45 @@ span.number::before {
   left: 0;
 }
 
-span.u0::before { animation-duration: 0.0022739251s; }
-span.u1::before { animation-duration: 0.0277392510s; }
-span.u2::before { animation-duration: 0.2773925104s; }
-span.u3::before { animation-duration: 2.7739251040s; }
-span.u4::before { animation-duration: 27.739251040s; }
-span.u5::before { animation-duration: 277.39251040s; }
-span.u6::before { animation-duration: 2773.9251040s; }
-span.u7::before { animation-duration: 27739.251040s; }
-span.u8::before { animation-duration: 277392.51040s; }
+span.u0::before {
+  animation-duration: 0.0022739251s;
+}
+
+span.u1::before {
+  animation-duration: 0.0277392510s;
+}
+
+span.u2::before {
+  animation-duration: 0.2773925104s;
+}
+
+span.u3::before {
+  animation-duration: 2.7739251040s;
+}
+
+span.u4::before {
+  animation-duration: 27.739251040s;
+}
+
+span.u5::before {
+  animation-duration: 277.39251040s;
+}
+
+span.u6::before {
+  animation-duration: 2773.9251040s;
+}
+
+span.u7::before {
+  animation-duration: 27739.251040s;
+}
+
+span.u8::before {
+  animation-duration: 277392.51040s;
+}
 
 @keyframes pop {
-  100% { 
-    transform: translate(0, -200%); 
+  100% {
+    transform: translate(0, -200%);
   }
 }
 
@@ -110,32 +163,74 @@ aside {
   max-width: 25vw;
   max-width: clamp(100px, 25vw, 300px);
   border-radius: 1vmin;
-  z-index: -1;
+  z-index: 1;
   animation: pop 20s linear;
   animation-fill-mode: forwards;
-  box-shadow: 0 0 2vmin rgba(0,0,0,0.25);
-  border: 1px solid rgba(0,0,0,0.125);
+  box-shadow: 0 0 2vmin rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.125);
   line-height: 1.25;
-  transform: translate(0, 100vh); 
+  transform: translate(0, 100vh);
 }
 
-aside.color0 { background: #ffadad; }
-aside.color1 { background: #ffd6a5; }
-aside.color2 { background: #fdffb6; }
-aside.color3 { background: #caffbf; }
-aside.color4 { background: #beeeef; }
-aside.color5 { background: #a0c4ff; }
-aside.color6 { background: #bdb2ff; }
-aside.color7 { background: #ffc6ff; }
+aside.color0 {
+  background: #ffadad;
+}
 
-aside.time0 { animation-timing-function: linear; }
-aside.time1 { animation-timing-function: ease; }
-aside.time2 { animation-timing-function: ease-in; }
-aside.time3 { animation-timing-function: ease-out; }
-aside.time4 { animation-timing-function: ease-in-out; }
+aside.color1 {
+  background: #ffd6a5;
+}
 
-aside.top0 { z-index: 1; }
-aside.top1 { z-index: 3; }
+aside.color2 {
+  background: #fdffb6;
+}
+
+aside.color3 {
+  background: #caffbf;
+}
+
+aside.color4 {
+  background: #beeeef;
+}
+
+aside.color5 {
+  background: #a0c4ff;
+}
+
+aside.color6 {
+  background: #bdb2ff;
+}
+
+aside.color7 {
+  background: #ffc6ff;
+}
+
+aside.time0 {
+  animation-timing-function: linear;
+}
+
+aside.time1 {
+  animation-timing-function: ease;
+}
+
+aside.time2 {
+  animation-timing-function: ease-in;
+}
+
+aside.time3 {
+  animation-timing-function: ease-out;
+}
+
+aside.time4 {
+  animation-timing-function: ease-in-out;
+}
+
+aside.top0 {
+  z-index: 1;
+}
+
+aside.top1 {
+  z-index: 3;
+}
 
 footer {
   position: absolute;
@@ -172,26 +267,42 @@ footer {
 /* This is for the color of the link to the github repo */
 a:link,
 a:visited {
-    color: rgb(119, 153, 244);
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+  color: rgb(119, 153, 244);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
 a:hover {
-    color: rgb(78, 125, 255);
+  color: rgb(78, 125, 255);
 }
 
 
-#toggleTheme {
-  margin: 0;
-  bottom: 92%;
-  right: 88%;
-  position: absolute;
-  padding: 8px;
-  border: none;
-  border-radius: 4px;
+@media(min-width: 600px) {
+  #toggleTheme {
+    margin-left: 15px;
+    bottom: 90%;
+    right: 88%;
+    position: absolute;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+  }
 }
+
+@media(max-width: 599px) {
+  #toggleTheme {
+    margin-left: 15px;
+    bottom: 90%;
+    right: 80%;
+    position: absolute;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+  }
+}
+
+
 
 .dark-mode {
   background-color: white;
