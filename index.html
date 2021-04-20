@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,10 +27,21 @@
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <button id="toggleTheme">Toggle Dark/Light mode</button>
+    <!-- icons from flaticon -->
+    <button>
+      <span class="in-dark-mode">
+        <img src="./icon-sun.svg" alt="" />
+        <span class="a11y-hidden">Change to light mode</span>
+      </span>
+      <span class="in-light-mode">
+        <img src="./icon-moon.svg" alt="" />
+        <span class="a11y-hidden">Change to dark mode</span>
+      </span>
+    </button>
+
     <article>
-      <p id="p">This is how much Jeff Bezos made...</p>
-      <output id="output">
+      <p>This is how much Jeff Bezos made...</p>
+      <output>
         <span class="symbol">$</span>
         <span class="number u8"></span>
         <span class="number u7"></span>
@@ -44,7 +55,7 @@
         <span class="number u1"></span>
         <span class="number u0"></span>
       </output>
-      <p id="p2">...since you started reading this page.</p>
+      <p>...since you started reading this page.</p>
     </article>
     <footer>
       <a href="https://github.com/alvaromontoro/bezos-calculator">See how this number was calculated</a>

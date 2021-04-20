@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   --size: 1.5rem;
   margin: 0;
   padding: 0;
@@ -14,8 +13,18 @@ body {
   background-color: rgb(40, 40, 40)
 }
 
+.a11y-hidden {
+  position: absolute;
+  left: -1000in;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 article {
   font-size: 5vmin;
+  position: relative;
+  z-index: 2;
 }
 
 article p {
@@ -36,7 +45,6 @@ output span {
   background: rgb(233, 233, 233);
   color: black;
   position: relative;
-  z-index: 2;
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
@@ -57,41 +65,15 @@ output span {
   }
 }
 
-span.u0 {
-  animation-delay: 0.0000000000s;
-}
-
-span.u1 {
-  animation-delay: 0.0022739251s;
-}
-
-span.u2 {
-  animation-delay: 0.0277392510s;
-}
-
-span.u3 {
-  animation-delay: 0.2773925104s;
-}
-
-span.u4 {
-  animation-delay: 2.7739251040s;
-}
-
-span.u5 {
-  animation-delay: 27.739251040s;
-}
-
-span.u6 {
-  animation-delay: 277.39251040s;
-}
-
-span.u7 {
-  animation-delay: 2773.9251040s;
-}
-
-span.u8 {
-  animation-delay: 27739.251040s;
-}
+span.u0 { animation-delay: 0.0000000000s; }
+span.u1 { animation-delay: 0.0022739251s; }
+span.u2 { animation-delay: 0.0277392510s; }
+span.u3 { animation-delay: 0.2773925104s; }
+span.u4 { animation-delay: 2.7739251040s; }
+span.u5 { animation-delay: 27.739251040s; }
+span.u6 { animation-delay: 277.39251040s; }
+span.u7 { animation-delay: 2773.9251040s; }
+span.u8 { animation-delay: 27739.251040s; }
 
 output span.symbol {
   display: inline-block;
@@ -111,41 +93,15 @@ span.number::before {
   left: 0;
 }
 
-span.u0::before {
-  animation-duration: 0.0022739251s;
-}
-
-span.u1::before {
-  animation-duration: 0.0277392510s;
-}
-
-span.u2::before {
-  animation-duration: 0.2773925104s;
-}
-
-span.u3::before {
-  animation-duration: 2.7739251040s;
-}
-
-span.u4::before {
-  animation-duration: 27.739251040s;
-}
-
-span.u5::before {
-  animation-duration: 277.39251040s;
-}
-
-span.u6::before {
-  animation-duration: 2773.9251040s;
-}
-
-span.u7::before {
-  animation-duration: 27739.251040s;
-}
-
-span.u8::before {
-  animation-duration: 277392.51040s;
-}
+span.u0::before { animation-duration: 0.0022739251s; }
+span.u1::before { animation-duration: 0.0277392510s; }
+span.u2::before { animation-duration: 0.2773925104s; }
+span.u3::before { animation-duration: 2.7739251040s; }
+span.u4::before { animation-duration: 27.739251040s; }
+span.u5::before { animation-duration: 277.39251040s; }
+span.u6::before { animation-duration: 2773.9251040s; }
+span.u7::before { animation-duration: 27739.251040s; }
+span.u8::before { animation-duration: 277392.51040s; }
 
 @keyframes pop {
   100% {
@@ -172,71 +128,60 @@ aside {
   transform: translate(0, 100vh);
 }
 
-aside.color0 {
-  background: #ffadad;
-}
+aside.color0 { background: #ffadad; }
+aside.color1 { background: #ffd6a5; }
+aside.color2 { background: #fdffb6; }
+aside.color3 { background: #caffbf; }
+aside.color4 { background: #beeeef; }
+aside.color5 { background: #a0c4ff; }
+aside.color6 { background: #bdb2ff; }
+aside.color7 { background: #ffc6ff; }
 
-aside.color1 {
-  background: #ffd6a5;
-}
+aside.time0 { animation-timing-function: linear; }
+aside.time1 { animation-timing-function: ease; }
+aside.time2 { animation-timing-function: ease-in; }
+aside.time3 { animation-timing-function: ease-out; }
+aside.time4 { animation-timing-function: ease-in-out; }
 
-aside.color2 {
-  background: #fdffb6;
-}
-
-aside.color3 {
-  background: #caffbf;
-}
-
-aside.color4 {
-  background: #beeeef;
-}
-
-aside.color5 {
-  background: #a0c4ff;
-}
-
-aside.color6 {
-  background: #bdb2ff;
-}
-
-aside.color7 {
-  background: #ffc6ff;
-}
-
-aside.time0 {
-  animation-timing-function: linear;
-}
-
-aside.time1 {
-  animation-timing-function: ease;
-}
-
-aside.time2 {
-  animation-timing-function: ease-in;
-}
-
-aside.time3 {
-  animation-timing-function: ease-out;
-}
-
-aside.time4 {
-  animation-timing-function: ease-in-out;
-}
-
-aside.top0 {
-  z-index: 1;
-}
-
-aside.top1 {
-  z-index: 3;
-}
+aside.top0 { z-index: 1; }
+aside.top1 { z-index: 3; }
 
 footer {
   position: absolute;
   right: 0.5rem;
   bottom: 0.5rem;
   font-size: 0.875rem;
+}
+
+a {
+  color: #69c;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Button to toggle light/dark modes */
+button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+button img {
+  width: 3rem;
+  height: 3rem;
+}
+
+button .in-light-mode {
+  display: none;
 }
 
 @media all and (min-width:500px) {
@@ -263,37 +208,28 @@ footer {
   }
 }
 
-
-/* This is for the color of the link to the github repo */
-a:link,
-a:visited {
-  color: rgb(119, 153, 244);
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-a:hover {
-  color: rgb(78, 125, 255);
-}
-
-
-#toggleTheme {
-  line-height: 12px;
-  font-size: 8pt;
-  margin-top: 8px;
-  margin-left: 8px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  border-radius: 4px;
-  border: none;
-}
-
-
-
-.dark-mode {
+/* Dark/Light mode */
+.light-mode {
   background-color: white;
   color: black;
+}
+
+.light-mode p {
+  color: black;
+  text-shadow:
+    0 -1px 1px #fff, 1px -1px 1px #fff, 1px 0 1px #fff,
+    1px 1px 1px #fff, 0 1px 1px #fff, -1px 1px 1px #fff,
+    -1px 0 1px #fff, -1px -1px 1px #fff;
+}
+
+.light-mode a {
+  color: #00f;
+}
+
+.light-mode button .in-light-mode {
+  display: block;
+}
+
+.light-mode button .in-dark-mode {
+  display: none;
 }
