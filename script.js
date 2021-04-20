@@ -44,3 +44,25 @@ const bubbles = [
 bubbles.forEach(function (el) {
   setTimeout(`createBubble(${el.cost}, "${el.text}")`, el.cost / earningRate * 1000);
 });
+
+// For theme (dark/light mode)
+document.getElementById("toggleTheme").addEventListener('click', () => {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+  // For light mode
+  if (document.querySelector('body').classList.contains('dark-mode')) {
+    document.getElementById('p').style.color = "black"
+    document.getElementById('p').style.textShadow = `none` 
+    document.getElementById('p2').style.color = "black"
+    document.getElementById('p2').style.textShadow = `none`
+  }
+
+// For light mode
+  else {
+    document.getElementById('p').style.color = "white" 
+    document.getElementById('p').style.textShadow = `none
+    `
+    document.getElementById('p2').style.color = "white" 
+    document.getElementById('p2').style.textShadow = `none` 
+  }
+})
