@@ -10,17 +10,29 @@ html, body {
   text-align: center;
   font-family: Palatino, Helvetica, arial, sans-serif;
   overflow: hidden;
+  background-color: rgb(40, 40, 40)
 }
 
-article {
+.a11y-hidden {
+  position: absolute;
+  left: -1000in;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+main {
   font-size: 5vmin;
+  position: relative;
+  z-index: 2;
 }
 
-article p {
-  text-shadow: 
-    0 -1px 1px #fff, 1px -1px 1px #fff, 1px 0 1px #fff,
-    1px 1px 1px #fff, 0 1px 1px #fff, -1px 1px 1px #fff, 
-    -1px 0 1px #fff, -1px -1px 1px #fff;
+main p {
+  color: white;
+  text-shadow:
+    0 -1px 1px #000, 1px -1px 1px #000, 1px 0 1px #000,
+    1px 1px 1px #000, 0 1px 1px #000, -1px 1px 1px #000,
+    -1px 0 1px #000, -1px -1px 1px #000;
 }
 
 output {
@@ -30,10 +42,9 @@ output {
 
 output span {
   font-family: monospace, monospace;
-  color: white;
-  background: black;
+  background: rgb(233, 233, 233);
+  color: black;
   position: relative;
-  z-index: 2;
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
@@ -48,8 +59,8 @@ output span {
 }
 
 @keyframes show {
-  100% { 
-    width: var(--size); 
+  100% {
+    width: var(--size);
     margin: calc(var(--size) * 0.0625);
   }
 }
@@ -93,8 +104,8 @@ span.u7::before { animation-duration: 27739.251040s; }
 span.u8::before { animation-duration: 277392.51040s; }
 
 @keyframes pop {
-  100% { 
-    transform: translate(0, -200%); 
+  100% {
+    transform: translate(0, -200%);
   }
 }
 
@@ -108,13 +119,13 @@ aside {
   max-width: 25vw;
   max-width: clamp(100px, 25vw, 300px);
   border-radius: 1vmin;
-  z-index: -1;
+  z-index: 1;
   animation: pop 20s linear;
   animation-fill-mode: forwards;
-  box-shadow: 0 0 2vmin rgba(0,0,0,0.25);
-  border: 1px solid rgba(0,0,0,0.125);
+  box-shadow: 0 0 2vmin rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.125);
   line-height: 1.25;
-  transform: translate(0, 100vh); 
+  transform: translate(0, 100vh);
 }
 
 aside.color0 { background: #ffadad; }
@@ -142,6 +153,37 @@ footer {
   font-size: 0.875rem;
 }
 
+a {
+  color: #69c;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Button to toggle light/dark modes */
+button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+button svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+button .in-light-mode {
+  display: none;
+}
+
 @media all and (min-width:500px) {
   body {
     --size: 2.5rem;
@@ -166,4 +208,28 @@ footer {
   }
 }
 
+/* Dark/Light mode */
+.light-mode {
+  background-color: white;
+  color: black;
+}
 
+.light-mode p {
+  color: black;
+  text-shadow:
+    0 -1px 1px #fff, 1px -1px 1px #fff, 1px 0 1px #fff,
+    1px 1px 1px #fff, 0 1px 1px #fff, -1px 1px 1px #fff,
+    -1px 0 1px #fff, -1px -1px 1px #fff;
+}
+
+.light-mode a {
+  color: #00f;
+}
+
+.light-mode button .in-light-mode {
+  display: block;
+}
+
+.light-mode button .in-dark-mode {
+  display: none;
+}
