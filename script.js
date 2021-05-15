@@ -4,7 +4,8 @@ const numColors = 8;
 const numTiming = 5;
 const numTops = 3;
 const earningRate = 3605;
-const numberFormatter = new Intl.NumberFormat('en', { style: 'currency', currency: 'USD', maximumFractionDigits: 0, minimumFractionDigits: 0 });
+const currencyFormatter = new Intl.NumberFormat('en', { style: 'currency', currency: 'USD', maximumFractionDigits: 0, minimumFractionDigits: 0 });
+const numberFormatter = new Intl.NumberFormat();
 let amount = 0;
 
 function createBubble(cost, text) {
@@ -12,8 +13,34 @@ function createBubble(cost, text) {
   const aside = document.createElement("aside");
   aside.style.left = `${left + 5}vw`;
   aside.className = `color${Math.floor(Math.random() * numColors)} time${Math.floor(Math.random() * numTiming)} top${Math.floor(Math.random() * numTops)}`;
-  aside.innerHTML = `<b>${Math.floor(cost / earningRate)} seconds</b>:<br>${text}<br/><i>${numberFormatter.format(cost)}</i>`;
+  aside.innerHTML = `<b>${prettyPrintTime(Math.floor(cost / earningRate))}</b>:<br>${text}<br/><i>${currencyFormatter.format(cost)}</i>`;
   body.append(aside);
+}
+
+function prettyPrintTime(sec_num) {
+  const days = Math.floor(sec_num / 60 / 60 / 24); // minutes / hours / days
+  const hours = Math.floor((sec_num - (days * 24 * 60 * 60)) / 60 / 60); // subtract # days (in seconds) / minutes / hours
+  const minutes = Math.floor((sec_num - (days * 24 * 60 * 60) - (hours * 60 * 60)) / 60); // subtract # days and hours / minutes
+  const seconds = sec_num - (days * 60 * 60 * 24) - (hours * 60 * 60) - (minutes * 60) // subtract # days, hours, and minutes for remaining seconds
+
+  // Append strings together
+  let output = '';
+  if (days > 0) {
+    output += `${numberFormatter.format(days)} day${days > 1 ? 's' : ''}`
+  }
+
+  if (hours > 0) {
+    output += `${days > 0 ? ' ': ''}${hours} hour${hours > 1 ? 's' : ''}`
+  }
+
+  if (minutes > 0) {
+    output += `${days > 0 || hours > 0 ? ' ': ''}${minutes} minute${minutes > 1 ? 's' : ''}`
+  }
+
+  if (seconds > 0) {
+    output += `${days > 0 || hours > 0 || minutes > 0 ? ' ': ''}${seconds} second${seconds > 1 ? 's' : ''}`
+  }
+  return output;
 }
 
 // visit https://github.com/alvaromontoro/bezos-calculator to see the sources
