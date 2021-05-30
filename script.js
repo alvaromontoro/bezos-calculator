@@ -25,22 +25,12 @@ function prettyPrintTime(sec_num) {
 
   // Append strings together
   let output = '';
-  if (days > 0) {
-    output += `${numberFormatter.format(days)} day${days > 1 ? 's' : ''}`
-  }
+  output += days > 0 ? ` ${days} day${hours > 1 ? 's' : ''}` : '';
+  output += hours > 0 ? ` ${hours} hour${hours > 1 ? 's' : ''}` : '';
+  output += minutes > 0 ? ` ${minutes} minute${minutes > 1 ? 's' : ''}` : '';
+  output += seconds > 0 ? ` ${seconds} second${seconds > 1 ? 's' : ''}` : '';
 
-  if (hours > 0) {
-    output += `${days > 0 ? ' ': ''}${hours} hour${hours > 1 ? 's' : ''}`
-  }
-
-  if (minutes > 0) {
-    output += `${days > 0 || hours > 0 ? ' ': ''}${minutes} minute${minutes > 1 ? 's' : ''}`
-  }
-
-  if (seconds > 0) {
-    output += `${days > 0 || hours > 0 || minutes > 0 ? ' ': ''}${seconds} second${seconds > 1 ? 's' : ''}`
-  }
-  return output;
+  return output.trim();
 }
 
 // visit https://github.com/alvaromontoro/bezos-calculator to see the sources
