@@ -38,6 +38,8 @@ main p {
 output {
   display: flex;
   justify-content: center;
+  height: calc(var(--size) * 1.5 + 0.5rem);
+  overflow: hidden;
 }
 
 output span {
@@ -168,7 +170,6 @@ a:hover {
 button {
   position: absolute;
   top: 1rem;
-  left: 1rem;
   border-radius: 0.25rem;
   border: none;
   background: transparent;
@@ -182,6 +183,19 @@ button svg {
 
 button .in-light-mode {
   display: none;
+}
+
+button#nightmode {
+  left: 1rem;
+}
+
+button#language {
+  right: 1rem;
+  color: #eee;
+}
+
+.light-mode button#language {
+  color: #222;
 }
 
 @media all and (min-width:500px) {

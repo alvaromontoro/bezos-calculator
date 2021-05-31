@@ -8,12 +8,12 @@ const currencyFormatter = new Intl.NumberFormat('en', { style: 'currency', curre
 const numberFormatter = new Intl.NumberFormat();
 let amount = 0;
 
-function createBubble(cost, text) {
+function createBubble(cost) {
   const left = Math.floor(Math.random() * 65);
   const aside = document.createElement("aside");
   aside.style.left = `${left + 5}vw`;
   aside.className = `color${Math.floor(Math.random() * numColors)} time${Math.floor(Math.random() * numTiming)} top${Math.floor(Math.random() * numTops)}`;
-  aside.innerHTML = `<b>${prettyPrintTime(Math.floor(cost / earningRate))}</b>:<br>${text}<br/><i>${currencyFormatter.format(cost)}</i>`;
+  aside.innerHTML = `<b>${prettyPrintTime(Math.floor(cost / earningRate))}</b>:<br>${local[language].messages[cost]}<br/><i>${currencyFormatter.format(cost)}</i>`;
   body.append(aside);
 }
 
@@ -25,42 +25,42 @@ function prettyPrintTime(sec_num) {
 
   // Append strings together
   let output = '';
-  output += days > 0 ? ` ${days} day${hours > 1 ? 's' : ''}` : '';
-  output += hours > 0 ? ` ${hours} hour${hours > 1 ? 's' : ''}` : '';
-  output += minutes > 0 ? ` ${minutes} minute${minutes > 1 ? 's' : ''}` : '';
-  output += seconds > 0 ? ` ${seconds} second${seconds > 1 ? 's' : ''}` : '';
+  output += days > 0 ? ` ${days} ${days > 1 ? local[language].days : local[language].day}` : '';
+  output += hours > 0 ? ` ${hours} ${hours > 1 ? local[language].hours : local[language].hour}` : '';
+  output += minutes > 0 ? ` ${minutes} ${minutes > 1 ? local[language].minutes : local[language].minute}` : '';
+  output += seconds > 0 ? ` ${seconds} ${seconds > 1 ? local[language].seconds : local[language].second}` : '';
 
   return output.trim();
 }
 
 // visit https://github.com/alvaromontoro/bezos-calculator to see the sources
-const bubbles = [
-  { cost: 15000, text: "more than a minimum wage worker... in a year" },
-  { cost: 31200, text: "more than Amazon's lowest paid employee... in a year" },
-  { cost: 47000, text: "more than the median yearly salary in the United States" },
-  { cost: 63409, text: "more than the average yearly salary in the United States" },
-  { cost: 81840, text: "more than his own yearly salary!" },
-  { cost: 99000, text: "enough not to qualify for covid-19 stimulus checks" },
-  { cost: 116600, text: "more than the yearly salary of a Sr Software Developer" },
-  { cost: 142000, text: "enough to buy a 'basic' Aston Martin Vantage" },
-  { cost: 174000, text: "more than what a US Senator makes in a year" },
-  { cost: 182000, text: "enough to buy a fully loaded Tesla Model S" },
-  { cost: 250000, text: "enough to raise a child from birth to age 17" },
-  { cost: 295300, text: "enough to buy a house for the median price in the USA" },
-  { cost: 320000, text: "more than the yearly salary of 99% of the US population" },
-  { cost: 400000, text: "more than what the US President makes in a year" },
-  { cost: 538926, text: "more than the annual income of the US 1%" },
-  { cost: 916000, text: "more than the median cost of a Manhattan apartment" },
-  { cost: 1000000, text: "enough to pay for the most expensive fishing lure ever" },
-  { cost: 1500000, text: "more than the annual income of the US 0.1%" },
-  { cost: 2029612, text: "enough to pay for a house in Hollywood, CA" },
-  { cost: 7000000, text: "more than the annual income of the US 0.01%" },
-  { cost: 69346250, text: "more than the most expensive NFT" },
-  { cost: 81000000, text: "more than the cost of a seat to space" },
+let bubbleTimes = [
+  15000,
+  31200,
+  47000,
+  63409,
+  81840,
+  99000,
+  116600,
+  142000,
+  174000,
+  182000,
+  250000,
+  295300,
+  320000,
+  400000,
+  538926,
+  916000,
+  1000000,
+  1500000,
+  2029612,
+  7000000,
+  69346250,
+  81000000
 ];
 
-bubbles.forEach(function (el) {
-  setTimeout(`createBubble(${el.cost}, "${el.text}")`, el.cost / earningRate * 1000);
+bubbleTimes.forEach(function (el) {
+  setTimeout(`createBubble(${el})`, el / earningRate * 1000);
 });
 
 // For theme (dark/light mode)
