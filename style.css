@@ -60,6 +60,19 @@ output span {
   margin: 0;
 }
 
+output span.separator::before {
+  content: ","
+}
+
+html[lang="es"] output span.separator::before {
+  content: "."
+}
+
+html[lang="es"] output span.currency {
+  order: 1;
+}
+
+
 @keyframes show {
   100% {
     width: var(--size);
@@ -197,6 +210,44 @@ button#language {
 .light-mode button#language {
   color: #222;
 }
+
+#language-popup {
+  position: absolute;
+  top: 4.25rem;
+  right: 1rem;
+  flex-direction: column;
+  background: #222;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  display: none;
+  z-index: 5;
+}
+
+#language-popup.active {
+  display: flex;
+}
+
+#language-popup button {
+  position: relative;
+  color: #eee;
+  text-align: left;
+  height: 3rem;
+  min-width: 150px;
+  max-width: 100%;
+  top: auto;
+  font-size: 1.125em;
+  padding: 0 0.5rem;
+}
+
+#language-popup button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#language-popup button:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 
 @media all and (min-width:500px) {
   body {

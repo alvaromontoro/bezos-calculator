@@ -1,5 +1,7 @@
 const body = document.querySelector("body");
-const button = body.querySelector("button");
+const nightmode = body.querySelector("#nightmode");
+const languagebutton = body.querySelector("#language");
+const languagepopup = body.querySelector("#language-popup");
 const numColors = 8;
 const numTiming = 5;
 const numTops = 3;
@@ -11,8 +13,9 @@ let amount = 0;
 function createBubble(cost) {
   const left = Math.floor(Math.random() * 65);
   const aside = document.createElement("aside");
+  aside.id = `b${cost}`;
   aside.style.left = `${left + 5}vw`;
-  aside.className = `color${Math.floor(Math.random() * numColors)} time${Math.floor(Math.random() * numTiming)} top${Math.floor(Math.random() * numTops)}`;
+  aside.className = `bubble color${Math.floor(Math.random() * numColors)} time${Math.floor(Math.random() * numTiming)} top${Math.floor(Math.random() * numTops)}`;
   aside.innerHTML = `<b>${prettyPrintTime(Math.floor(cost / earningRate))}</b>:<br>${local[language].messages[cost]}<br/><i>${currencyFormatter.format(cost)}</i>`;
   body.append(aside);
 }
@@ -64,6 +67,10 @@ bubbleTimes.forEach(function (el) {
 });
 
 // For theme (dark/light mode)
-button.addEventListener('click', () => {
+nightmode.addEventListener('click', () => {
   body.classList.toggle("light-mode");
+});
+
+languagebutton.addEventListener('click', function () {
+  languagepopup.classList.toggle("active");
 });
