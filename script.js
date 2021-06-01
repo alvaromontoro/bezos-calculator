@@ -69,6 +69,7 @@ bubbleTimes.forEach(function (el) {
 // For theme (dark/light mode)
 nightmode.addEventListener('click', () => {
   body.classList.toggle("light-mode");
+  localStorage.setItem("darkmode", body.className !== "light-mode");
 });
 
 languagebutton.addEventListener('click', function () {

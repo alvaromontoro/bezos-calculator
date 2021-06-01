@@ -18,12 +18,19 @@ function changeLanguage(newLang) {
       const cost = bubble.id.replace("b", "");
       bubble.innerHTML = `<b>${prettyPrintTime(Math.floor(parseInt(cost) / earningRate))}</b>:<br>${local[language].messages[cost]}<br/><i>${currencyFormatter.format(parseInt(cost))}</i>`
     });
-
-    document.querySelector("#language-popup").classList.remove("active");
   }
 }
 
+function languageClick(newLang) {
+  changeLanguage(newLang);
+  document.querySelector("#language-popup").classList.remove("active");
+  localStorage.setItem("language", newLang);
+}
+
 const navLanguage = navigator.language;
-if (navLanguage) {
-  changeLanguage(navLanguage.substr(0, 2).toLowerCase());
+const storageLanguage = localStorage.getItem("language");
+const newLanguage = storageLanguage || navLanguage;
+
+if (newLanguage) {
+  changeLanguage(newLanguage.substr(0, 2).toLowerCase());
 }
