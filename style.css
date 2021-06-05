@@ -68,6 +68,11 @@ html[lang="es"] output span.separator::before {
   content: "."
 }
 
+html[lang="ru"] output span.separator::before {
+  content: " "
+}
+
+html[lang="ru"] output span.currency,
 html[lang="es"] output span.currency {
   order: 1;
 }
