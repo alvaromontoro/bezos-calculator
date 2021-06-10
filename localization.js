@@ -1,5 +1,5 @@
 let language = "en";
-const validLanguages = ["en", "es", "ru"];
+const validLanguages = ["en", "es", "ru", "tm"];
 
 function changeLanguage(newLang) {
   if (validLanguages.indexOf(newLang) > -1) {
