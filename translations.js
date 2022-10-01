@@ -115,5 +115,44 @@ const local = {
       "69346250": "больше, чем стоит самый дорогой NFT-токен",
       "81000000": "больше, чем стоит место на космическом корабле"
     }
+  },
+  pt: {
+    day: "dia",
+    days: "dias",
+    hour: "hora",
+    hours: "horas",
+    minute: "minuto",
+    minutes: "minutos",
+    second: "segundo",
+    seconds: "segundos",
+    top: "Isto é quanto o Jeff Bezos fez...",
+    bottom: "...desde que começaste a ver este site.",
+    link: "Vê como estes números foram calculados",
+    changeLight: "Mudar para modo branco",
+    changeDark: "Mudar para modo preto",
+    messages: {
+      "15000": "mais que o salário mínimo... num ano",
+      "31200": "mais que o salário mínimo de um empregado da Amazon... num ano",
+      "47000": "mais do que o salário médio anual nos Estados Unidos",
+      "63409": "mais do que a média do salário anual nos Estados Unidos",
+      "81840": "mais do que seu próprio salário anual!",
+      "99000": "não qualifica para o estimulo de Covid-19",
+      "116600": "mais do que um salario anual de um Desenvolvedor de software",
+      "142000": "suficiente para comprar um 'básico' Aston Martin Vantage",
+      "174000": "mais do que um senador dos Estados Unidos ganha em um ano",
+      "182000": "suficiente para comprar um Tesla Model S com todos os upgrades",
+      "250000": "o suficiente para criar uma criança desde o nascimento até os 17 anos",
+      "295300": "o suficiente para comprar uma casa pelo preço médio nos Estados Unidos",
+      "320000": "mais do que o salário anual de 99% da população dos estados unidos",
+      "400000": "mais do que o presidente does estados unidos faz num ano",
+      "538926": "mais do que a renda anual dos 1% residentes do Estados unidos",
+      "916000": "o preço médio de um apartamento em Manhattan",
+      "1000000": "o suficiente para pagar a isca de pesca mais cara de sempre",
+      "1500000": "mais do que a renda anual dos 0,1% residentes do estados unidos",
+      "2029612": "suficiente para pagar uma casa em Hollywood, CA",
+      "7000000": "mais do que a renda anual dos 0,01% residentes dos Estados Unidos",
+      "69346250": "mais do que o NFT mais caro",
+      "81000000": "mais do que o custo de um assento para o espaço"
+    }
   }
 };
